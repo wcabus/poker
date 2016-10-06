@@ -13,12 +13,5 @@ export class AppController {
 
 export default {
   controller: AppController,
-  template: `
-  <div class="container">
-    <div class="row">
-      <h1>Realdolmen Poker</h1>
-      <div ui-view></div>
-    </div>
-  </div>
-  `
+  template: <string> require('./root.html')
 };
