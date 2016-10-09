@@ -1,0 +1,60 @@
+<div ng-if="!$ctrl.isRunning" class="form-horizontal">
+    <div class="form-group">
+        <label for="roundTime" class="col-md-3 control-label">Round duration (in minutes):</label>
+        <div class="col-md-9">
+            <input id="roundTime" type="number" class="form-control" min="1" max="30" required ng-model="$ctrl.roundTime" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="smallBlind" class="col-md-3 control-label">Small blind:</label>
+        <div class="col-md-9">
+            <input id="smallBlind" type="number" class="form-control" min="25" required ng-model="$ctrl.smallBlind" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="bigBlind" class="col-md-3 control-label">Big blind:</label>
+        <div class="col-md-9">
+            <input id="bigBlind" type="number" class="form-control" min="50" required ng-model="$ctrl.bigBlind" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button type="button" class="btn btn-default" ng-click="$ctrl.start()">Start!</button>
+        </div>
+    </div>
+</div>
+<div ng-if="$ctrl.isRunning" class="row">
+    <div class="col-md-12 text-center">
+        <h1>
+            <span ng-hide="$ctrl.isBreakRound">Round {{$ctrl.round}}</span>
+            <span ng-show="$ctrl.isBreakRound">Break round</span>
+            <br/><br/>
+            {{$ctrl.getTime()}}
+        </h1>
+    </div>
+
+    <div ng-if="$ctrl.isBreakRound" class="col-md-12 text-center">
+        <h2>Next blinds:</h2>
+    </div>
+
+    <div class="col-md-12 text-center">
+        <h1 class="largest">
+            <br/><br/>
+            Small blind<br/><br/>{{$ctrl.smallBlind}}
+            <br/><br/>
+            Big blind<br/><br/>{{$ctrl.bigBlind}}
+        </h1>
+    </div>
+
+    <div class="col-md-12 text-right">
+        <br /><br />
+        <button class="btn btn-primary" ng-click="$ctrl.hasBreakBeenRequested = true" ng-hide="$ctrl.hasBreakBeenRequested || $ctrl.isBreakRound">
+            <i class="glyphicon glyphicon-pause"></i>
+            Request break
+        </button>
+        <button class="btn btn-danger" ng-click="$ctrl.stop()">
+            <i class="glyphicon glyphicon-stop"></i>
+            End game
+        </button>
+    </div>
+</div>

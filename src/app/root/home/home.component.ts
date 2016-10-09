@@ -1,6 +1,6 @@
 import { AppController} from '../root.component';
 
-interface IChip {
+export interface IChip {
   value: number,
   color: string
 }
