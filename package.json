@@ -29,5 +29,8 @@
     "angular-ui-router": "^0.3.1",
     "bootstrap": "^3.3.7",
     "typescript": "^2.0.3"
+  },
+  "engines": {
+    "node": "6.6.0"
   }
 }
