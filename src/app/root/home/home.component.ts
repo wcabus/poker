@@ -17,16 +17,16 @@ export class HomeController {
       color: 'white'
     }, {
       value: 100,
-      color: 'blue'
+      color: 'red'
     }, {
       value: 500,
       color: 'green'
     }, {
       value: 1000,
-      color: 'red'
+      color: 'black'
     }, {
       value: 5000,
-      color: 'black'
+      color: 'blue'
     }];
 
     this.smallBlind = 25;
